@@ -7,6 +7,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 
@@ -18,6 +20,7 @@ public class Sessao {
 	
 	@Id
 	@Column(length = 36)
+	@GeneratedValue(strategy = GenerationType.UUID)
 	private String uuid;
 	
 	@Column(columnDefinition = "TIMESTAMP")
